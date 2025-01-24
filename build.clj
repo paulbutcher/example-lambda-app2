@@ -2,7 +2,7 @@
   (:refer-clojure :exclude [test])
   (:require [clojure.tools.build.api :as b]))
 
-(def main 'paulbutcher.lambda)
+(def main 'example.lambda)
 (def class-dir "target/classes")
 
 (defn- uber-opts [opts]

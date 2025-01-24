@@ -1,4 +1,4 @@
-(ns paulbutcher.example-lambda-app
+(ns example.lambda-app
   (:require [compojure.core :refer [defroutes GET]]
             [compojure.route :as route]
             [hiccup2.core :refer [html]]
@@ -16,9 +16,9 @@
 (defn greet [] (str (html [:div "Hello, World!"])))
 
 (defroutes app-routes
-           (GET "/" [] (index-page))
-           (GET "/greet" [] (greet))
-           (route/not-found "Not Found"))
+  (GET "/" [] (index-page))
+  (GET "/greet" [] (greet))
+  (route/not-found "Not Found"))
 
 (def app
   (-> app-routes
