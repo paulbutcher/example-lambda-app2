@@ -36,7 +36,7 @@ Resources:
         - IpProtocol: tcp
           FromPort: 5432
           ToPort: 5432
-          CidrIp: 10.0.0.0/16
+          CidrIp: !GetAtt VPC.CidrBlock
   Subnet1:
     Type: AWS::EC2::Subnet
     Properties:
@@ -85,8 +85,7 @@ Resources:
           - Effect: Allow
             Principal:
               AWS: !Sub "arn:${AWS::Partition}:iam::${AWS::AccountId}:root"
-            Action:
-              - "kms:*"
+            Action: ["kms:*"]
             Resource: "*"
 
 Outputs:
