@@ -6,11 +6,15 @@ Run locally:
 
 Build an uberjar:
 
-    $ clojure -T:build uberjar
+    $ clojure -T:build uber
 
 Deploy that uberjar:
 
     $ sam deploy
+
+View logs:
+
+      $ sam logs --tail
 
 ## License
 
